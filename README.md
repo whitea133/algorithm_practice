@@ -15,3 +15,5 @@
 10. 二维前缀和算法 qianzhuihe_2d
 11. 差分算法 chafen
 12. 二维差分算法 chafen_2d
+13. 双重指针算法 doublePtr / doublePtr_2
+14. 位运算算法 bitFuc

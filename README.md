@@ -1,6 +1,29 @@
 # algorithm_practice
 算法模版练习
 
+## 网页默写工具
+项目里有一个本地网页，可以选择 `src` 目录下的代码模板，默写后进行逐行对比；如果配置了 DeepSeek API Key，还会返回大模型分析结果。
+
+在项目根目录启动：
+
+```bash
+npm start
+```
+
+然后浏览器打开：
+
+```text
+http://127.0.0.1:3000
+```
+
+如果要启用 DeepSeek 分析，先复制环境变量示例文件：
+
+```bash
+cp web/.env.example web/.env
+```
+
+再把 `web/.env` 里的 `DEEPSEEK_API_KEY` 改成你的真实 Key。真实 `.env` 文件已经被 `.gitignore` 忽略，不要提交到 GitHub。
+
 ## 练习顺序
 ## 1. 基础算法
 1. 快速排序 quick_sort

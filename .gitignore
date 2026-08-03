@@ -1,1 +1,4 @@
 /pratice
+.env
+.env.*
+!.env.example

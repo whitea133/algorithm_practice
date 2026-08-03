@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>代码默写对比</title>
+    <link rel="stylesheet" href="./vendor/codemirror/lib/codemirror.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar" aria-label="操作区">
+        <div>
+          <p class="eyebrow">acwimg template practice</p>
+          <h1>代码默写对比</h1>
+        </div>
+        <div class="controls">
+          <label class="select-wrap">
+            <span>模板</span>
+            <select id="templateSelect"></select>
+          </label>
+          <button id="compareBtn" type="button">对比</button>
+          <button id="clearBtn" class="ghost" type="button">清空</button>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="默写区">
+        <div class="editor-shell">
+          <textarea id="codeInput" spellcheck="false" placeholder="在这里默写 C++ 模板..."></textarea>
+        </div>
+        <div class="stats">
+          <span id="lineCount">1 行</span>
+          <span id="charCount">0 字符</span>
+          <span id="saveState">已自动保存</span>
+        </div>
+      </section>
+
+      <section class="result-grid" aria-label="对比结果">
+        <article class="panel">
+          <div class="panel-title">
+            <h2>你的默写</h2>
+            <span id="userSummary">等待对比</span>
+          </div>
+          <pre id="userDiff" class="diff"></pre>
+        </article>
+        <article class="panel">
+          <div class="panel-title">
+            <h2>标准模板</h2>
+            <span id="refSummary">等待对比</span>
+          </div>
+          <pre id="refDiff" class="diff"></pre>
+        </article>
+      </section>
+
+      <section class="ai-panel" aria-label="DeepSeek 分析">
+        <div class="panel-title">
+          <h2>DeepSeek 分析</h2>
+          <span id="aiState">未开始</span>
+        </div>
+        <pre id="aiResult">选择模板后点击“对比”，下面会给出本地逐行差异；配置 DeepSeek API Key 后，还会补充语义层面的检查。</pre>
+      </section>
+    </main>
+
+    <script src="./vendor/codemirror/lib/codemirror.min.js"></script>
+    <script src="./vendor/codemirror/mode/clike/clike.min.js"></script>
+    <script src="./vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+    <script src="./vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

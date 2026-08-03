@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "node web/server.mjs"
+  }
+}

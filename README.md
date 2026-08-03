@@ -23,6 +23,8 @@
 1. 单链表 singleLink_list
 2. 双链表 doubleLink_list
 
+## 3. kmp算法
+kmp算法代码 在src目录下
 # 输入输出操作tips
 对于要连续输入的数据，假设要输入n个数，则连续读入的代码如下：
 ```

@@ -130,7 +130,7 @@ async function analyzeWithDeepSeek(templateId, userCode, reference) {
         messages: [
           {
             role: "system",
-            content: "你是算法模板默写批改助手。请只指出会影响正确性、边界条件、复杂度或模板结构的问题；如果没有问题，直接说明正确。",
+            content: "你是算法模板默写批改助手。只做最终判定，不要展开解释。输出必须严格简短：1. 第一行写“正确”或“错误”。2. 如果是错误，后面最多列出3条问题，每条只写出出错的那一行代码或行号，并说明错在哪。3. 不要输出可忽略差异、背景分析、总结性废话、表格、Markdown 标题。",
           },
           {
             role: "user",
@@ -140,7 +140,7 @@ async function analyzeWithDeepSeek(templateId, userCode, reference) {
               reference,
               "【学生默写】",
               userCode,
-              "请用中文输出：1. 总体结论 2. 关键错误 3. 可忽略差异。",
+              "请只回答是否默写正确；如果不正确，只列出哪几行写错了，以及错在哪里。",
             ].join("\n"),
           },
         ],

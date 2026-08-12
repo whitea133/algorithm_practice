@@ -1,7 +1,7 @@
 // 对应的算法题目：模拟堆
 #include <iostream>
-#include <algorithm>
-#include <string.h>
+#include <algorithm> // 这个库提供std:swap()函数  
+#include <string.h> // 后面的strcmp是用的这个库
 
 using namespace std;
 

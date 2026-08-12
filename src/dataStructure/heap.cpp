@@ -1,6 +1,6 @@
 // 对应的算法题目：堆排序
 #include <iostream>
-#include <algorithm>
+#include <algorithm>    // 这个库提供std:swap()函数    
 using namespace std;
 
 const int N = 100010;

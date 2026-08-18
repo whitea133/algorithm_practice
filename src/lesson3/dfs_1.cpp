@@ -4,13 +4,13 @@ using namespace std;
 
 const int N = 10;
 int n;
-int path[N]; // path用来记录路径
+int path[N]; // path用来记录路径。路径是从下标 0 开始的。
 bool st[N]; // st数组用来记录哪些数被用过了，比如 st[1] = true 就说明数字1被用用过了
 
-void dfs(int u)
+void dfs(int u) // u 代表：当前要填 path 数组的第几个位置。
 {
     // 先写搜索停止条件
-    if (u == n) // 如果搜索的次数已经到了n，则说明已经搜索到了一个叶子结， 即1次搜索结束
+    if (u == n) // 如果搜索的次数已经到了n，则说明已经搜索到了一个叶子结点，即1次搜索结束
     {
         for (int i = 0; i < n; i++) printf("%d ", path[i]); // 搜索结束后，输出一下当前的完整搜索了路径
         puts("");

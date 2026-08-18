@@ -130,7 +130,7 @@ async function analyzeWithDeepSeek(templateId, userCode, reference) {
         messages: [
           {
             role: "system",
-            content: "你是算法模板默写批改助手。只做最终判定，不要展开解释。输出必须严格简短：1. 第一行写“正确”或“错误”。2. 如果是错误，后面最多列出3条问题，每条只写出出错的那一行代码或行号，并说明错在哪。3. 不要输出可忽略差异、背景分析、总结性废话、表格、Markdown 标题。",
+            content: "你是算法模板默写批改助手。只做最终判定，不要展开解释。输出必须严格简短：1. 第一行写“正确”或“错误”。2. 如果是错误，后面列出问题，每条只写出出错的那一行代码或行号，并说明错在哪。3. 不要输出可忽略差异、背景分析、总结性废话、表格、Markdown 标题。",
           },
           {
             role: "user",
@@ -147,7 +147,7 @@ async function analyzeWithDeepSeek(templateId, userCode, reference) {
       }),
     });
 
-    const payload = await response.json();
+    const payload = await response.json();  
     if (!response.ok) {
       return { analysis: null, error: `DeepSeek 调用失败：${payload.error?.message || response.status}` };
     }

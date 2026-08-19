@@ -30,7 +30,8 @@ int bellman_ford()
         }
     }
 
-    if (dist[n] > 0x3f3f3f3f / 2) return -1; // 这里注意要 / 2 一下。就是表示距离大于一个比较大的数。
+    // 有负权的图，才会是用以下的判断方式。
+    if (dist[n] > 0x3f3f3f3f / 2) return -1; // 这里注意要 / 2 一下。就是表示距离大于一个比较大的数。(负权所致)
 
     return dist[n];
 }

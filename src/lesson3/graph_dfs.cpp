@@ -21,7 +21,7 @@ void add(int a, int b)
 }
 
 // 深度优先搜索 -- 代码模版
-int dfs(int u)
+int dfs(int u) // u 表示把 u 点删掉,
 {
     st[u] = true; // 标记一下， 已经被搜过了
 

@@ -10,6 +10,7 @@ const int N = 100010; // 点的数量很多，边少，为稀疏图
 typedef pair<int, int> PII; // 前面存源点到编号点的距离，后面存编号
 
 int n, m;
+// 注意这里不用 M = N * 2, M = N*2 只用在 无向图 / 树。
 int h[N], e[N], ne[N], idx, w[N]; // 为稀疏图， 改用 邻接表 存储图。新加的 w 数组存的是边的权重
 int dist[N];
 int st[N];
@@ -24,6 +25,10 @@ void add(int a, int b, int c)
 
 int dijkstra()
 {
+    /*
+    求最短路径 → 一律用 0x3f；
+    BFS 网格标记有没有访问过 → 用‑1；
+    */
     memset(dist, 0x3f, sizeof dist);
     dist[1] = 0;
 
@@ -37,6 +42,8 @@ int dijkstra()
          
         int ver = t.second, distance = t.first; // ver 存点的编号，distance 存 源点 到 ver点 的距离
         if (st[ver]) continue; // 如果这个点之前已经找到过最短距离，则不用管这个点，直接continue，进入下一次循环
+        // 标记节点ver已确定最短距离
+        st[ver] = true;
 
         // 用当前新找到的最短点进行更新所有的距离
         for (int i = h[ver]; i != -1; i = ne[i]) // 遍历所有与 ver 点 有关的边
@@ -70,6 +77,10 @@ int main()
     {
         int a, b, c;
         scanf("%d%d%d", &a, &b, &c);
+        /*
+        朴素 Dijkstra（二重循环版本）：要自己预处理重边，a→b 只存权重最小那一条
+        堆优化版（优先队列）：不需要提前手动去重边, 直接 add 就行
+        */
         add(a, b, c);
     }
 

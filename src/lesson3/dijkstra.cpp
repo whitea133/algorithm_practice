@@ -14,6 +14,10 @@ bool st[N];
 int dijkstra()
 {
     // 初始化 距离dist矩阵，都初始化为正无穷，这里用 0x3f代替
+    /*
+    求最短路径 → 一律用 0x3f；
+    BFS 网格标记有没有访问过 → 用‑1；
+    */
     memset(dist, 0x3f, sizeof dist); 
     dist[1] = 0; // 1 号点初始化为0
 

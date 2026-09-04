@@ -8,13 +8,13 @@ bool check(int i, int j) {return true;};
 void moban()    // 双指针算法的通用思想模版
 {
     int i, j;
-    while (j < i && check(i, j)) j++;
+    while (j < i && check(i, j)) j++; // j 是小于 i 的一个指针，一般用来作左边界
 
     // 每道题的具体逻辑
 
 }
 
-// 双指针算法的一个实例。比如输出字母
+// 双指针算法的一个实例。比如：读入一整行字符串，按空格分割，把每个单词单独一行输出
 int main()
 {
     string str;
